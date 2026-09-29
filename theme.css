@@ -1,0 +1,152 @@
+/* Project Somniferum atlas: "printed and hand-bound" theme. */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+:root{
+  --ink:#e8dec6; --muted:#bdb49e; --gold:#d3a75c;
+  --bg:#161410; --panel:#1e1b16; --line:#3f382c;
+  --raised:#282319; --sunk:#12100d; --brass:#8d7343; --verd:#82b0a1;
+  --display:"IM Fell English",Georgia,serif;
+  --text:"EB Garamond",Georgia,serif;
+  --ui:"Alegreya Sans","Segoe UI",sans-serif;
+  --grain:linear-gradient(transparent,transparent);
+}
+*{scrollbar-width:thin;scrollbar-color:#54472f transparent}
+::selection{background:#d3a75c55}
+body{font:17px/1.55 var(--text);background:var(--bg)}
+:focus-visible{outline:2px dashed var(--gold);outline-offset:2px}
+
+/* header */
+.top{background:var(--grain),#1b1813;border-bottom:3px double #4d4230}
+.seal{font-family:var(--display);box-shadow:0 0 0 3px #1b1813,0 0 0 4px var(--brass)}
+.title{font:400 27px/1 var(--display);letter-spacing:.03em}
+.eyebrow,.record-subtitle,.region,.mini{font:italic 400 15px/1.3 var(--text);letter-spacing:0;text-transform:none;color:var(--gold)}
+.mini{color:var(--muted)}
+.region{margin-bottom:16px}
+#saveStatus{font:italic 15px var(--text);letter-spacing:0;color:var(--muted)}
+.top-search{position:relative;flex:1;max-width:380px;margin:0 20px;min-width:0}
+.top-search input{width:100%;font-size:16px}
+
+/* buttons and form controls */
+button{font:500 15px/1 var(--ui);background:var(--raised);color:var(--ink);border:1px solid #5c4e37;border-radius:2px 4px 3px 4px;padding:9px 13px;box-shadow:0 1px 0 #0008,inset 0 1px 0 #ffffff0d;transition:border-color .15s,color .15s,background .15s}
+button:hover{background:#312a1d;border-color:var(--gold);color:var(--gold)}
+button.active{background:var(--gold);color:#1c1810;border-color:var(--gold);font-weight:700}
+button.active:hover{background:#e0b76c;color:#1c1810}
+.card input,.card textarea,.card select,.record-form select,.ruler-row input,.relation-row-edit select,.top-search input,#countyPickSelect{background:var(--sunk);color:var(--ink);border:1px solid #514530;border-radius:2px;font:16px/1.4 var(--text);padding:9px 10px}
+.card input:focus,.card textarea:focus,.card select:focus,.top-search input:focus{outline:1px solid var(--gold);border-color:var(--gold)}
+.world-control-actions select,.atlas-area-tools select{background:var(--raised);color:var(--ink);border:1px solid #5c4e37;border-radius:2px 4px 3px 4px;font:15px var(--ui);padding:8px}
+.field{font:italic 400 16px var(--text);letter-spacing:0;text-transform:none;color:var(--gold);margin:14px 0 4px}
+.world-control-actions label{font:italic 15px var(--text);letter-spacing:0;text-transform:none;color:var(--gold)}
+
+/* tabs */
+.tabbar{background:var(--grain),#1a1712;border-bottom:1px solid var(--line);gap:2px}
+.tabbtn{font:400 19px/1 var(--display);color:var(--muted);padding:0 18px;box-shadow:none;background:transparent;border-radius:0}
+.tabbtn:hover{background:transparent;color:var(--ink);border-bottom-color:var(--brass)}
+.tabbtn.active{color:var(--gold);border-bottom:2px solid var(--gold)}
+
+/* map plate */
+.map-area,.world-canvas{background:radial-gradient(ellipse at center,#2c271d 0%,#181510 72%,#100e0b 100%)}
+.map-wrap,.world-wrap{box-shadow:0 0 0 6px #1a1712,0 0 0 7px #6d5c3b,0 0 0 11px #1a1712,0 16px 60px #000c}
+.pin circle{fill:#1f1b15;stroke:var(--gold);stroke-width:2.5;filter:drop-shadow(0 2px 2px #000b)}
+.pin.seas circle{stroke:var(--verd)}
+.pin.selected circle{fill:#8b5a26;stroke:#f3dfaa}
+.pin text{font:700 13px var(--ui);fill:#f6ebcf}
+.toolbar button,.layers button,.atlas-area-tools button{background:#1b1813ee;border-color:#5c4e37}
+.toolbar button{font-size:19px}
+.layers button.off{opacity:.5}
+.layers .sea-dot{color:var(--verd)}
+.hint,.trace-hint,.atlas-trace-hint,.area-badge,.atlas-country-badge,.toast{background:#1b1813f2;border:1px solid var(--brass);border-radius:2px;color:#e6dec8;font:italic 15px/1.4 var(--text)}
+.trace-hint,.atlas-trace-hint{border-color:var(--verd)}
+.area-badge strong,.atlas-country-badge{font-family:var(--display);font-weight:400;font-size:19px;color:var(--gold)}
+.area-badge p{font:15px/1.45 var(--text);color:#e2dac4}
+.atlas-country-badge button{font:500 14px var(--ui);border-radius:2px}
+.county-progress{font:italic 15px var(--text);color:var(--gold)}
+
+/* side panel, lists, record pages */
+.side,.record-list-pane{background:var(--grain),var(--panel);border-color:#4d4230}
+.side{border-left:3px double #4d4230}
+.sidehead,.record-list-head{border-bottom:1px solid var(--line)}
+.sidehead h2,.record-list-head h2,.place-name,.record-card h2,.timeline-head h2,.record-empty h2,.timeline-empty h3{font-family:var(--display);font-weight:400;color:var(--ink)}
+.sidehead h2{font-size:27px}
+.place-name{font-size:30px;line-height:1.15}
+.record-card h2{font-size:40px;line-height:1.1}
+.record-card .desc{font-size:19px;line-height:1.75}
+.desc,.timeline-summary,.nation-sections p,.relation-notes,.placeholder,.record-empty p{font-family:var(--text);color:#e6dec8;font-size:17px;line-height:1.7}
+.rule{height:9px;background:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:20px 0}
+.place-row{font:17px/1.35 var(--text);color:#e8e0ca;border-radius:2px;border-left:2px solid transparent}
+.place-row:hover{background:#2a251b;color:var(--gold)}
+.record-list .place-row.active{background:#2d271b;color:var(--gold);border-left-color:var(--gold)}
+.record-list .place-row small{font:italic 15px var(--text)!important;color:var(--muted)!important}
+.dot{color:var(--brass)}
+.empty{font:italic 15px var(--text);color:var(--muted)}
+.places{border-top:1px solid var(--line)}
+.record-meta{font:italic 16px var(--text);color:var(--muted)}
+.record-content{background:var(--grain)}
+.records-layout,.timeline-view.active{background:#191611}
+
+/* boxed sections */
+.nation-sections section,.relations-block,.ruler-history-block,.timeline-card,.ruler-row,.relation-row-edit,.card{background:var(--grain),#1f1b15;border:1px solid #4a4030;border-radius:2px}
+.nation-sections h3,.relations-block>h3,.ruler-history-block>h3,.linked-block h3{font:italic 400 20px var(--display);letter-spacing:0;text-transform:none;color:var(--gold)}
+.relation-type{background:#332a1b;color:var(--gold);font:italic 15px var(--text);letter-spacing:0;text-transform:none;border-radius:2px}
+.relation-dates,.timeline-meta{font:italic 15px var(--text);color:var(--muted)}
+.relation-target,.record-meta button{font:inherit}
+.chip{font:16px var(--text);background:#1f1b15;border:1px solid #4a4030;border-radius:2px 6px 2px 6px;color:var(--ink)}
+.chip:hover{background:#2d271b}
+.linked-block .muted{font:italic 16px var(--text);color:var(--muted)}
+
+/* timeline */
+.timeline-head{background:var(--grain),#1b1813;border-bottom:1px solid var(--line)}
+.timeline-head h2{font-size:32px}
+.timeline-head p{font:italic 16px var(--text);color:var(--muted)}
+.timeline-date{font:italic 16px var(--display);letter-spacing:0;color:var(--gold)}
+.timeline-track:before{border-left:1px solid var(--brass)}
+.timeline-track:after{background:var(--bg);border:2px solid var(--gold);box-shadow:0 0 0 3px var(--bg)}
+.timeline-card h3{font:400 23px/1.2 var(--display);color:var(--ink)}
+.timeline-more{font:italic 16px var(--text)}
+.timeline-extra{font-size:17px}
+.timeline-actions button{font-size:14px}
+
+/* search results */
+.search-results{background:#1b1813;border:1px solid var(--brass);border-radius:2px;box-shadow:0 10px 30px #000a}
+.search-results button{font:17px var(--text);background:none;box-shadow:none;border-radius:0;padding:9px 12px;border-bottom:1px solid #34301f}
+.search-results button:hover,.search-results button:focus{background:#2b251a;color:var(--gold)}
+.search-results small{font:italic 15px var(--text);letter-spacing:0;text-transform:none;color:var(--muted)}
+.search-empty{font:italic 16px var(--text)}
+
+/* modals */
+.modal{background:#080705bb}
+.card{padding:28px;box-shadow:0 20px 80px #000c;outline:1px solid #3a3225;outline-offset:-8px}
+.card h3{font:400 27px/1.15 var(--display)}
+
+/* home */
+.home-view.active{background:var(--grain),radial-gradient(ellipse at 70% 8%,#2d271b 0%,#1e1a14 45%,#14120e 100%)}
+.home-hero{border-bottom:3px double #4d4230}
+.home-copy h1{font:400 clamp(50px,7.5vw,88px)/1.02 var(--display);letter-spacing:.005em;color:#f1e4c9}
+.home-lede{font:italic 21px/1.6 var(--text);color:#e2dac4}
+.home-primary{background:var(--gold);color:#1c1810;border-color:var(--gold);font-weight:700}
+.home-primary:hover{background:#e0b76c;color:#1c1810}
+.home-secondary{background:var(--raised)}
+.home-ring,.home-ring b{font-family:var(--display)}
+.home-ring b{font-weight:400}
+.home-stats{border-bottom:1px solid var(--line)}
+.home-stats strong{font:400 32px/1.1 var(--display);font-variant-numeric:oldstyle-nums;color:#f0d9aa}
+.home-stats span{font:italic 16px var(--text);letter-spacing:0;text-transform:none;color:var(--muted)}
+.home-section-heading h2{font:400 30px var(--display)}
+.home-card{background:var(--grain),#1d1913;border:1px solid #4a4030;border-radius:2px;font-family:var(--text)}
+.home-card:hover{background:var(--grain),#2a2419;border-color:var(--brass);transform:none}
+.home-card-symbol{font-family:var(--display)}
+.home-card-title{font:400 23px var(--display)}
+.home-card-copy{font:16px/1.45 var(--text);color:#cbc2ab}
+.home-card-link{font:italic 16px var(--text);color:var(--gold)}
+.home-footer{font:italic 15px var(--text);color:var(--muted)}
+
+/* small screens */
+@media(max-width:760px){
+  .title{font-size:21px}
+  .eyebrow{font-size:13px}
+  .tabbtn{font-size:16px;padding:0 10px}
+  .map-wrap,.world-wrap{box-shadow:0 0 0 4px #1a1712,0 0 0 5px #6d5c3b,0 10px 40px #000c}
+  .home-copy h1{font-size:50px}
+  .home-lede{font-size:18px}
+  button{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
